@@ -4,7 +4,18 @@ A project for controlling your Ikea Idasen desk through Bluetooth, using go.
 
 ## How do I use it?
 
-First of all, build the project or download it from the releases page.
+Clone and build the project
+
+or
+
+download it from the releases page
+
+or
+
+use Go
+```
+go install github.com/a-skuba/go-idasen@latest
+```
 
 ## How does it work?
 

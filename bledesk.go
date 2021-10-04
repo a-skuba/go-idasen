@@ -12,9 +12,11 @@ import (
 
 // This is the desks minimum height
 const baseHeight = 63.00
+
 // Absolute difference between desired height and current height
 // used when moving the desk.
 const positionDiff = 1.0
+
 // Interval to sleep between issuing command and measuring the position
 const sleepInterval = 500 * time.Millisecond
 

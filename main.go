@@ -170,6 +170,8 @@ func getDesk(nameOrAddr string) *deskDriver {
 	bleAdaptor.Connect()
 	bleDesk.Start()
 
+	fmt.Println("Successfully connect to " + nameOrAddr)
+
 	return bleDesk
 }
 
