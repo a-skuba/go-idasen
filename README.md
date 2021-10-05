@@ -38,6 +38,7 @@ Usage of ./go-idasen:
   -pos float
         Position to move desk to in cm. Ranges from 65cm to 128cm.
 ```
+> On Linux, you have to run with sudo for accessing BLE.
 
 ### Connect to a desk
 
