@@ -15,8 +15,8 @@ import (
 
 const dataPath = "/.go-idasen.json"
 const connectTimeout = 10 * time.Second
-const deskMinHeight = 65.00
-const deskMaxHeight = 128.0
+const deskMinHeight = 63.0  // 62.5
+const deskMaxHeight = 128.0 // 127.5
 
 type deskData struct {
 	Name      string             `json:Name`
