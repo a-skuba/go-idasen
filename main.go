@@ -218,6 +218,7 @@ func main() {
 
 	// Get a connection to the desk
 	bleDesk := getDesk(target)
+	defer bleDesk.connection.Finalize()
 
 	if *curr {
 		pos := bleDesk.getPosition()
