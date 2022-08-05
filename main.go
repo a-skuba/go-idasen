@@ -182,6 +182,7 @@ func main() {
 	var movefav = flag.String("movefav", "", "Load a favorite and move there.")
 	var listfav = flag.Bool("listfav", false, "List favorite positions.")
 	var delfav = flag.String("delfav", "", "Remove a given favorite position.")
+	var curr = flag.Bool("curr", false, "Print current position")
 	flag.Parse()
 
 	settings, err := loadSettings()
@@ -218,11 +219,18 @@ func main() {
 	// Get a connection to the desk
 	bleDesk := getDesk(target)
 
+	if *curr {
+		pos := bleDesk.getPosition()
+		printExit(fmt.Sprintf("Current position is %.2f", pos), 0)
+	}
+
 	if *pos != 0 {
 		if *pos >= deskMinHeight && *pos <= deskMaxHeight {
 			bleDesk.move(*pos)
+			curr := bleDesk.getPosition()
+			fmt.Printf("Current position is %.2f\n", curr)
 		} else {
-			printExit("Position must be between 65 and 128.", 2)
+			printExit(fmt.Sprintf("Position must be between %.0f and %.0f.", deskMinHeight, deskMaxHeight), 2)
 		}
 	}
 
